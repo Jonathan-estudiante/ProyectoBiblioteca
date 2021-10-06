@@ -1,0 +1,59 @@
+{% extends "inicio/principal.html" %}
+{% load static %}
+{% block content %}
+<div class="page-header">
+    <h1 class="all-tittles">Sistema Bibliotecario <small>Perfil de Usuario</small></h1>
+</div>
+</div>
+<div class="container-fluid" style="margin: 50px 0;">
+    <div class="row">
+        <div class="col-xs-12 col-sm-4 col-md-3">
+            <img src="{% static 'img/user01.png' %}" alt="user" class="img-responsive center-box"
+                style="max-width: 110px;">
+        </div>
+        <div class="col-xs-12 col-sm-8 col-md-8 text-justify lead">
+            Bienvenido a la sección para editar ver y así poder modificar su usuario.
+        </div>
+    </div>
+</div>
+<ol class="breadcrumb">
+    <li class="active">Mi Perfil</li>
+    <li>Datos de mi perfil</li>
+</ol>
+<div class="col-xs-12 col-sm-8 col-md-8 text-center lead" style="font-size: 25px; margin-left: 170px;">
+    <div class="row g-3">
+        <div class="col-md-6">
+            <label for="" class="form-label">Usuario</label>
+            <div>{{id_usuario.username}}</div>
+        </div>
+    </div>
+    <hr>
+    <div class="row g-3">
+        <div class="col-md-6">
+            <label for="inputPassword4" class="form-label">Nombre</label>
+            <div>{{id_usuario.first_name}}</div>
+        </div>
+        <div class="col-md-6">
+            <label for="inputAddress" class="form-label">Apellido</label>
+            <div>{{id_usuario.last_name}}</div>
+        </div>
+    </div>
+    <hr>
+    <div class="row g-3">
+        <div class="col-md-6">
+            <label for="inputAddress2" class="form-label">Correo</label>
+            <div>{{id_usuario.email}}</div>
+        </div>
+        <div class="col-md-6">
+            <label for="inputPassword4" class="form-label">Contraseña</label>
+            <div>*************</div>
+        </div>
+    </div>
+    <hr>
+    <!-- <div class="row g-3">
+        <div class="col-md-12">
+            <button class="btn" style="font-size: 25px; background-color: bisque;"><a
+                    href="{% url 'usuarios:editar_usuario' user.id %}">Editar Perfil</a></button>
+        </div>
+    </div> -->
+    {% endblock %}

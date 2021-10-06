@@ -1,0 +1,42 @@
+{% extends "inicio/principal.html" %}
+{% load static %}
+{% block cont %}
+<link rel="stylesheet" href="{% static 'css/registro/registro.css' %}">
+<section class="form-register">
+    <h4>Registrarse</h4>
+    <form action="" method="POST">
+        {% csrf_token %}
+        <div class="row g-3">
+            <label for="">Nombre de Usuario</label>
+            <input class="controls" type="text" name="{{form.username.name}}"
+                placeholder="Ingrese su Nombre de Usuario">
+            <label for="">Nombre</label>
+
+            <input class="controls" type="text" name="{{form.first_name.name}}" placeholder="Ingrese su Nombre">
+        </div>
+        <div class="row g-3">
+            <label for="">Apellido</label>
+
+            <input class="controls" type="text" name="{{form.last_name.name}}" placeholder="Ingrese su apellido">
+            <label for="">Correo</label>
+
+            <input class="controls" type="email" name="{{form.email.name}}" placeholder="Ingrese su Correo">
+        </div>
+        <div class="row g-3">
+
+            <label for="">Contraseña</label>
+
+            <input class="controls" type="password" name="{{form.password1.name}}" placeholder="Ingrese su Contraseña">
+            <label for="">Repetir contraseña</label>
+
+        <input class="controls" type="password" name="{{form.password2.name}}"
+            placeholder="Ingrese su Contraseña otra vez">
+        </div>
+
+
+        <p>Estoy de acuerdo con <a href="/terminos">Terminos y Condiciones</a></p>
+        <input class="botons" type="submit" value="Registrarse">
+    </form>
+    <p><a href="/ingreso">¿Ya tengo Cuenta?</a></p>
+</section>
+{% endblock cont %}

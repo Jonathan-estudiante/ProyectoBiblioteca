@@ -1,0 +1,73 @@
+{% extends "inicio/principal.html" %}
+{% load static %}
+{% block content %}
+
+<div class="page-header">
+    <h1 class="all-tittles">Editar Usuario<small>Perfil de Usuario</small></h1>
+</div>
+<ol class="breadcrumb">
+    <li class="active">Mi Perfil</li>
+    <li>Datos de mi perfil</li>
+</ol>
+<div class="col-xs-12 col-sm-8 col-md-8 text-justify lead" style="font-size: 25px;">
+    <form action="" method="POST" style="font-size: 10px;">
+        {% csrf_token %}
+        {{ formEditUser.as_p }}
+
+        <!-- <div class="row g-3">
+            <div class="col-md-6">
+                <label for="" class="form-label">Usuario</label>
+                <input type="text" class="form-control" name="{{formEditUser.username.name}}"
+                    placeholder="Coloque su nuevo usuario" style="font-size: 25px;">
+            </div>
+        </div>
+        <hr>
+        <div class="row g-3">
+            <div class="col-md-6">
+                <label for="inputPassword4" class="form-label">Nombre</label>
+                <input type="text" class="form-control" name="{{formEditUser.first_name.name}}"
+                    placeholder="Coloque su nuevo nombre" style="font-size: 25px;">
+            </div>
+            <div class="col-md-6">
+                <label for="inputAddress" class="form-label">Apellido</label>
+                <input type="text" class="form-control" name="{{formEditUser.last_name.name}}"
+                    placeholder="Coloque su nuevo apellido" style="font-size: 25px;">
+            </div>
+        </div>
+        <hr>
+        <div class="row g-3">
+
+            <div class="col-md-6">
+                <label for="inputAddress2" class="form-label">Correo</label>
+                <input type="text" class="form-control" name="{{formEditUser.email.name}}"
+                    placeholder="Coloque su correo" style="font-size: 25px;">
+            </div>
+        </div>
+        <hr>
+        <div class="row g-3">
+            <div class="col-md-6">
+                <label for="inputPassword4" class="form-label">Contraseña</label>
+                <input type="password" class="form-control" name="{{formEditUser.password1.name}}"
+                    style="font-size: 25px;">
+            </div>
+            <div class="col-md-6">
+                <label for="inputAddress" class="form-label">Contraseña</label>
+                <input type="password" class="form-control" name="{{formEditUser.password2.name}}"
+                    style="font-size: 25px;">
+            </div>
+        </div>
+        <hr>
+        <div class="row g-3" text-center style="margin-left: 230px;">
+
+        </div> -->
+        <div class="col-md-2">
+            <button class="btn" type="submit" style="font-size: 25px; background-color: bisque;">Editar</button>
+        </div>
+        <div class="col-md-2">
+            <button class="btn" type="submit" style="font-size: 25px; background-color: bisque;">Cancelar</button>
+        </div>
+    </form>
+
+</div>
+
+{% endblock content %}

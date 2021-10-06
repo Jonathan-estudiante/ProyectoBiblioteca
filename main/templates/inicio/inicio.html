@@ -1,0 +1,98 @@
+{% extends "inicio/principal.html" %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+
+<div class="page-header">
+    <h1 class="all-tittles">Sistema Bibliotecario <small>Página Principal</small></h1>
+</div>
+<div class="container-fluid" style="margin: 50px 0;">
+    <div class="row">
+        <div class="col-xs-12 col-sm-4 col-md-3">
+            <img src="{% static 'img/user01.png' %}" alt="user" class="img-responsive center-box"
+                style="max-width: 110px;">
+        </div>
+        <div class="col-xs-12 col-sm-8 col-md-8 text-justify lead">
+            Bienvenido a la página principal de este sistema esperemos y disfrute de esta humilde interfaz.
+        </div>
+    </div>
+</div>
+<ol class="breadcrumb">
+    <li class="active">Inicio</li>
+    <li>Página Principal</li>
+</ol>
+
+<h3>Bienvenido a Libreía Caché</h3>
+<!-- <p class="prf">
+
+        <input type="search" name="busqueda"">
+    
+        <input type="submit" value="Buscar">
+    
+      </p> -->
+<div class="slider">
+
+    <ul>
+        <li>
+            <img src="https://images.squarespace-cdn.com/content/v1/53aadf1de4b0a0a817640cca/1559067185327-OYW6XDBRXG25DOB8W9TI/libros++de+texto"
+                alt="" />
+        </li>
+        <li>
+            <img src="https://www.trecebits.com/wp-content/uploads/2020/03/libros-gratis-Internet-Archive-800x445.jpg" "500px"
+                height="600px" alt="" />
+        </li>
+        <li>
+            <img src="https://i1.wp.com/hipertextual.com/wp-content/uploads/2021/01/books-bookstore-book-reading.jpg?fit=1200%2C798&ssl=1" "500px"
+                height="600px" alt="" />
+        </li>
+        <li>
+            <img src="https://img.unocero.com/2020/04/como-descargar-libros-gratis.jpg" "500px" height="600px" alt="" />
+        </li>
+    </ul>
+</div>
+<h3>Recomendaciones</h3>
+<div class="row">
+    {% for libro in libro_usuario %}
+    <div class="col-3">
+        <div class="col-xl-3 col-lg-3 col-md-4 col-6 animated fadeInUp ng-scope" ng-if="vistaGrid">
+            <figure class="card card-product-grid shadow">
+                <div>
+                    <a href="/" class="img-wrap">
+                        <img src="{{ libro.img.url }}">
+                        <span class="badge badge-danger"
+                            style="background: #000 !important;padding: 0.80em 0.80em !important;color: #F27021!important;font-size: 90% !important;display:none">
+                            -100% off</span>
+                    </a>
+                    <figcaption class="info-wrap">
+                        <div class="detalleLibros centrado">
+                            <h5 style="font-size: 14px;">
+                                <a class="text-concat-title" href="/">
+                                    {{libro.titulo}} </a>
+                            </h5>
+                            <p class="autortxt text-concat-subtitle">{{libro.autor}}</p>
+                        </div>
+                    </figcaption>
+                </div>
+                <div class="bottom-wrap d-flex align-items-center" style="background: #F2F2F0;">
+                    <div class="m-auto form-inline">
+                        <button d ata-toggle="modal" data-target="#modalCodBarWishlist9788418038914"
+                            class="btn btn-light btn-lg" type="button"
+                            ng-click="agregarArticuloWishlist('9788418038914')" data-productid="9788418038914">
+                            <i class="grupoWish fa fa-heart fa-2x"></i>
+                        </button>
+                        <button data-toggle="modal" data-target="#modalCodBar9788418038914" class="btn btn-light btn-lg"
+                            type="button" ng-click="agregarArticuloCarrito('9788418038914')"
+                            data-productid="9788418038914">
+                            <i class="grupoCart fa fa-shopping-cart fa-2x"></i>
+                        </button>
+                    </div>
+                </div>
+            </figure>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+<script src="{% static 'js/carrusel.js' %}"></script>
+
+{% endblock %}

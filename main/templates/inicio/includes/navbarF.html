@@ -1,0 +1,20 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/estilos.css' %}">
+<nav>
+    <input type="checkbox" id="check">
+    <label for="check" class="checkbtn">
+        <i class="fas fa-bars"></i>
+    </label>
+    <span>
+        <img src="{% static 'img/CachéLogo.png' %}" alt="" width="40" height="40" class="d-inline-block align-text-top"
+            style="margin-left: 50px;">
+    </span>
+    <label class="logo2">Biblioteca Caché</label>
+    <ul>
+        <li><a class="active" href="#">Inicio</a></li>
+        <li><a href="/ingreso">Iniciar Sesión</a></li>
+        <li><a href="/registro">Registrarse</a></li>
+    </ul>
+</nav>
+
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>

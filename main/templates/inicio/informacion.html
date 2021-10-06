@@ -1,0 +1,56 @@
+{% extends "inicio/principal.html" %}
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/informacion.css' %}">
+<div class="page-header">
+  <h1 class="all-tittles">Sistema Bibliotecario <small>Librería Caché</small></h1>
+</div>
+<div class="container-fluid" style="margin: 50px 0;">
+  <div class="row">
+    <div class="col-xs-12 col-sm-4 col-md-3">
+      <img src="{% static 'img/user01.png' %}" alt="user" class="img-responsive center-box" style="max-width: 110px;">
+    </div>
+    <div class="col-xs-12 col-sm-8 col-md-8 text-justify lead">
+      Bienvenido a la sección donde podrá encontrar información sobre este sistema.
+    </div>
+  </div>
+</div>
+<ol class="breadcrumb">
+  <li class="active">Librería Caché</li>
+  <li>Información</li>
+</ol>
+<div class="form-group">
+  <h4>
+    <label for="titulo">Información General</label>
+  </h4>
+  <p class="prf">Librería Caché pone a disposición en Internet,
+    de manera gratuita la visualizacion y gestion
+    de pequenas historias y libros con la idea básica
+    de crear una colección en Internet y de fácil acceso,
+    además invita a sus usuarios a explorar la gran
+    variedad de libros que ofrece en su plataforma
+    de forma gratuita. </p>
+
+  <h4><label for="titulo">Objetivos</label></h5>
+    <p class="prf">Los objetivos de Librería Caché son los siguientes:<br>
+      - Ampliar la cantidad y variedad de contenido literario en Internet.<br>
+      - Facilitar recursos literarios a educadores, estudiantes y público en general. </p>
+
+    <h4><label for="titulo">Políticas de privacidad</label></h5>
+      <p class="prf">La protección de su información personal y de su privacidad
+        es importante para Librería Caché, en lo que respecta al sitio web:
+        <br></br>
+        Únicamente recogeremos la información personal que usted proporcione
+        de manera voluntaria y únicamente haremos uso de dicha información en
+        lo que respecte a su petición o cualquier otro fin para el que haya sido presentada.
+        <br></br>
+        Revelaremos información personal a un organismo gubernamental únicamente
+        si la ley así lo exige, y a terceros solo si usted nos ha autorizado previamente.
+        <br></br>
+        No recogeremos información relativa a los menores de edad de manera consciente.
+        Si advertimos que un menor ha proporcionado información, responderemos debidamente
+        y procederemos a eliminar cualquier información que permita la identificación personal
+        del menor. Hemos puesto en práctica medidas de seguridad para proteger cualquier información recogida.
+      </p>
+</div>
+{% endblock %}

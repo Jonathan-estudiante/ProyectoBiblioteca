@@ -1,0 +1,18 @@
+{% extends "inicio/principal.html" %}
+{% load static %}
+{% block cont %}
+<link rel="stylesheet" href="{% static 'css/ingreso/ingreso.css' %}">
+<section class="form-register">
+    <h4>Iniciar Sesión</h4>
+    <form action="" method="POST">
+        {% csrf_token %}
+        <label for="">Usuario</label>
+        <input class="controls" type="text" name="{{form.username.name}}" placeholder="Ingrese su Nombre de Usuario">
+        <label for="">Contraseña</label>
+        <input class="controls" type="password" name="{{form.password.name}}" placeholder="Ingrese su Contraseña">
+        <input class="botons" type="submit" value="Iniciar Sesión">
+    </form>
+    <p><a href="/registro">¿Aún no tengo Cuenta?</a></p>
+</section>
+
+{% endblock cont %}

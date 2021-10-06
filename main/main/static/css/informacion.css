@@ -1,0 +1,27 @@
+body {
+    padding: 200px;
+    font: 15px;
+    background-color: #f0f1e5;
+    
+    }
+    
+    .prf{           
+    text-align: justify;
+    font-size:12ppx;
+    padding: 15px;
+    color:#070733;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: rgb(253, 253, 243);
+    }
+
+    label{
+        font-size: 30px;
+        background-color: rgba(216, 169, 50, 0.541);
+        width: 100%;
+        padding: 15px;
+        padding-left: 50px;
+        text-align: left;
+        color: rgb(77, 54, 121);
+        font-weight: 100px;
+    }

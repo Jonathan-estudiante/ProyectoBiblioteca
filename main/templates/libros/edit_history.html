@@ -1,0 +1,33 @@
+{% extends "inicio/principal.html" %}
+{% load static %}
+{% block content %}
+<div class="page-header">
+    <h1 class="all-tittles">Sistema Bibliotecario <small>Editar una Historia</small></h1>
+</div>
+<div class="container-fluid" style="margin: 50px 0;">
+
+    <div class="row">
+        <div class="col-xs-12 col-sm-4 col-md-3">
+            <img src="{% static 'img/user01.png' %}" alt="user" class="img-responsive center-box"
+                style="max-width: 110px;">
+        </div>
+        <div class="col-xs-12 col-sm-8 col-md-8 text-justify lead">
+            Bienvenido a la sección en donde podrás crear y editar una historia.
+        </div>
+    </div>
+</div>
+<ol class="breadcrumb">
+    <li class="active">Libros</li>
+    <li>Pequeña Historia</li>
+</ol>
+<form action="" method="POST">
+    {% csrf_token %}
+    {{form.as_p}}
+    <div class="row g-3" text-center>
+        <div class="col-md-2">
+            <button class="btn" type="submit" style="font-size: 25px; background-color: bisque;">Editar
+                Historia</button>
+        </div>
+    </div>
+</form>
+{% endblock %}

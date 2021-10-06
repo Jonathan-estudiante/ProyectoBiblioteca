@@ -1,0 +1,76 @@
+{% extends "inicio/principal.html" %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/lista_libro/card.css' %}">
+
+<link rel="stylesheet" href="{% static 'css/lista_libro/style.css' %}">
+<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+
+<link rel="stylesheet" href="{% static 'css/lista_libro/books800.css' %}">
+<div class="page-header">
+    <h1 class="all-tittles">Sistema Bibliotecario <small>Lista de libros subidos por el usuario</small></h1>
+</div>
+</div>
+<div class="container-fluid" style="margin: 50px 0;">
+    <div class="row">
+        <div class="col-xs-12 col-sm-4 col-md-3">
+            <img src="{% static 'img/user01.png' %}" alt="user" class="img-responsive center-box"
+                style="max-width: 110px;">
+        </div>
+        <div class="col-xs-12 col-sm-8 col-md-8 text-justify lead">
+            Bienvenido a la sección donde podrás observar todos los libros que has subido.
+        </div>
+    </div>
+</div>
+<ol class="breadcrumb">
+    <li class="active">Libros</li>
+    <li>Lista de libros</li>
+</ol>
+<div class="row">
+    {% for libro in libro_usuario %}
+    <div class="col-3">
+        <div class="col-xl-3 col-lg-3 col-md-4 col-6 animated fadeInUp ng-scope" ng-if="vistaGrid">
+            <figure class="card card-product-grid shadow">
+                <div>
+                    <a href="/" class="img-wrap">
+                        <img src="{{ libro.img.url }}">
+                        <span class="badge badge-danger"
+                            style="background: #000 !important;padding: 0.80em 0.80em !important;color: #F27021!important;font-size: 90% !important;display:none">
+                            -100% off</span>
+                    </a>
+                    <figcaption class="info-wrap">
+                        <div class="detalleLibros centrado">
+                            <h5 style="font-size: 14px;">
+                                <a class="text-concat-title" href="/">
+                                    {{libro.titulo}} </a>
+                            </h5>
+                            <p class="autortxt text-concat-subtitle">{{libro.autor}}</p>
+                        </div>
+                    </figcaption>
+                </div>
+                <div class="bottom-wrap d-flex align-items-center" style="background: #F2F2F0;">
+                    <div class="m-auto form-inline">
+                        <button d ata-toggle="modal" data-target="#modalCodBarWishlist9788418038914"
+                            class="btn btn-light btn-lg" type="button"
+                            ng-click="agregarArticuloWishlist('9788418038914')" data-productid="9788418038914">
+                            <i class="grupoWish fa fa-heart fa-2x"></i>
+                        </button>
+                        <button data-toggle="modal" data-target="#modalCodBar9788418038914" class="btn btn-light btn-lg"
+                            type="button" ng-click="agregarArticuloCarrito('9788418038914')"
+                            data-productid="9788418038914">
+                            <i class="grupoCart fa fa-shopping-cart fa-2x"></i>
+                        </button>
+                    </div>
+                </div>
+            </figure>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+<script src="https://cdn.datatables.net/v/dt/dt-1.11.3/datatables.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#example').DataTable();
+    });
+</script>
+{% endblock %}
